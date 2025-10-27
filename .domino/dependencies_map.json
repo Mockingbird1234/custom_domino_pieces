@@ -8,7 +8,7 @@
             "ExampleSineWavePiece"
         ],
         "secrets": [],
-        "source_image": "ghcr.io/enter-your-registry-name-here/enter-your-repository-name-here:development-group0"
+        "source_image": "ghcr.io/hpc/hpc:development-group0"
     },
     "group1": {
         "dependency": {
@@ -19,6 +19,6 @@
             "ExampleSleepPiece"
         ],
         "secrets": [],
-        "source_image": "ghcr.io/enter-your-registry-name-here/enter-your-repository-name-here:development-group1"
+        "source_image": "ghcr.io/hpc/hpc:development-group1"
     }
 }
