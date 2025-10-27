@@ -1,10 +1,10 @@
 [repository]
 # The name of the github organization / person owner, e.g. tauffer-consulting.
 # Must be in lower-case letters
-REGISTRY_NAME = "高性能计算模块"
+REGISTRY_NAME = "HPC"
 
 # The name of this Pieces repository
-REPOSITORY_NAME = "高性能计算模块"
+REPOSITORY_NAME = "HPC"
 REPOSITORY_LABEL = "1111一些通用的高性能计算模块"
 
 # The version of this Pieces release
