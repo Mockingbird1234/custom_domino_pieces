@@ -4,7 +4,7 @@
 REGISTRY_NAME = "hpc"
 
 # The name of this Pieces repository
-REPOSITORY_NAME = "HPC"
+REPOSITORY_NAME = "hpc"
 REPOSITORY_LABEL = "1111一些通用的高性能计算模块"
 
 # The version of this Pieces release
