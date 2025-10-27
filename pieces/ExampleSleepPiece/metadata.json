@@ -1,5 +1,5 @@
 {
-  "name": "示例睡眠片",
+  "name": "ExampleSleepPiece",
   "description": "这是一个简单的示例，会睡眠 N 秒",
   "dependency": {
     "requirements_file": "requirements_0.txt"

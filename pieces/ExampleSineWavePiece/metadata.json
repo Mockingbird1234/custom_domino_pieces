@@ -1,5 +1,5 @@
 {
-  "name": "示例正弦波片段",
+  "name": "ExampleSineWavePiece",
   "description": "这是一个使用 Dockerfile 管理依赖的示例。",
   "dependency": {
     "dockerfile": "Dockerfile_1"
