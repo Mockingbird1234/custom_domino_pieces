@@ -6,10 +6,10 @@
             "requirements_file": null
         },
         "tags": [
-            "Example"
+            "\u793a\u4f8b"
         ],
         "style": {
-            "node_label": "Example Sine Piece",
+            "node_label": "\u793a\u4f8b\u6b63\u5f26\u56fe",
             "node_type": "default",
             "node_style": {
                 "backgroundColor": "#ebebeb"
@@ -20,7 +20,7 @@
                 "cursor": "pointer"
             }
         },
-        "description": "This is an example of a piece that uses Dockerfile for dependencies.",
+        "description": "\u8fd9\u662f\u4e00\u4e2a\u4f7f\u7528 Dockerfile \u7ba1\u7406\u4f9d\u8d56\u7684\u793a\u4f8b\u3002",
         "container_resources": {
             "requests": {
                 "cpu": 100,
@@ -72,7 +72,7 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/Tauffer-Consulting/domino_pieces_repository_template/tree/main/pieces/ExampleSineWavePiece"
+        "source_url": "https://github.com/Mockingbird1234/custom_domino_pieces/tree/main/pieces/ExampleSineWavePiece"
     },
     "ExampleSleepPiece": {
         "name": "ExampleSleepPiece",
@@ -81,10 +81,10 @@
             "requirements_file": "requirements_0.txt"
         },
         "tags": [
-            "Example"
+            "\u793a\u4f8b"
         ],
         "style": {
-            "node_label": "Example Sleep Piece",
+            "node_label": "\u793a\u4f8b\u7761\u7720",
             "node_type": "default",
             "node_style": {
                 "backgroundColor": "#ebebeb"
@@ -95,7 +95,7 @@
                 "cursor": "pointer"
             }
         },
-        "description": "This is an example of a simple Domino Piece that sleep for N seconds",
+        "description": "\u8fd9\u662f\u4e00\u4e2a\u7b80\u5355\u7684\u793a\u4f8b\uff0c\u4f1a\u7761\u7720 N \u79d2",
         "container_resources": {
             "requests": {
                 "cpu": 100,
@@ -135,6 +135,6 @@
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/Tauffer-Consulting/domino_pieces_repository_template/tree/main/pieces/ExampleSleepPiece"
+        "source_url": "https://github.com/Mockingbird1234/custom_domino_pieces/tree/main/pieces/ExampleSleepPiece"
     }
 }
