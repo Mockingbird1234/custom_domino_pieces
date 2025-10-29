@@ -1,0 +1,12 @@
+{
+  "name": "数据请求",
+  "description": "从特定地址请求数据并将数据上传至对象存储",
+  "dependency": {
+    "requirements_file": "requirements_0.txt"
+  },
+  "tags": ["default", "http", "request"],
+  "style": {
+    "node_label": "HTTP Request",
+    "icon_class_name": "material-symbols:send"
+  }
+}

@@ -1,12 +1,12 @@
 [repository]
 # The name of the github organization / person owner, e.g. tauffer-consulting.
 # Must be in lower-case letters
-REGISTRY_NAME = "hpc"
+REGISTRY_NAME = "bpptcommon"
 
 # The name of this Pieces repository
-REPOSITORY_NAME = "hpc"
-REPOSITORY_LABEL = "一些通用的高性能计算模块"
+REPOSITORY_NAME = "bpptcommon"
+REPOSITORY_LABEL = "通用"
 
 # The version of this Pieces release
 # Attention: changing this will create a new release
-VERSION = "0.2.0"
+VERSION = "0.2.1"
