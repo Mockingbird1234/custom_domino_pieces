@@ -1,140 +1,231 @@
 {
-    "ExampleSineWavePiece": {
-        "name": "ExampleSineWavePiece",
-        "dependency": {
-            "dockerfile": "Dockerfile_1",
-            "requirements_file": null
-        },
-        "tags": [
-            "\u793a\u4f8b"
-        ],
-        "style": {
-            "node_label": "\u793a\u4f8b\u6b63\u5f26\u56fe",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid:database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "\u8fd9\u662f\u4e00\u4e2a\u4f7f\u7528 Dockerfile \u7ba1\u7406\u4f9d\u8d56\u7684\u793a\u4f8b\u3002",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
-        "input_schema": {
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "frequency": {
-                    "default": 5,
-                    "description": "Frequency of the sine wave in Hz",
-                    "title": "Frequency",
-                    "type": "integer"
-                },
-                "duration": {
-                    "default": 1,
-                    "description": "Duration of the sine wave signal in seconds",
-                    "title": "Duration",
-                    "type": "integer"
-                },
-                "sample_rate": {
-                    "default": 1000,
-                    "description": "Sample rate of the sine wave signal.",
-                    "title": "Sample Rate",
-                    "type": "integer"
-                }
-            },
-            "title": "InputModel",
-            "type": "object"
-        },
-        "output_schema": {
-            "description": "Sleep Piece Output Model",
-            "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "message"
-            ],
-            "title": "OutputModel",
-            "type": "object"
-        },
-        "secrets_schema": null,
-        "source_url": "https://github.com/Mockingbird1234/custom_domino_pieces/tree/main/pieces/ExampleSineWavePiece"
-    },
-    "ExampleSleepPiece": {
-        "name": "ExampleSleepPiece",
+    "ImageFilterPiece": {
+        "name": "ImageFilterPiece",
         "dependency": {
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "tags": [
-            "\u793a\u4f8b"
+            "default",
+            "image"
         ],
         "style": {
-            "node_label": "\u793a\u4f8b\u7761\u7720",
+            "node_label": "Image Filter",
             "node_type": "default",
             "node_style": {
                 "backgroundColor": "#ebebeb"
             },
             "useIcon": true,
-            "icon_class_name": "fa-solid:database",
+            "icon_class_name": "ic:twotone-filter",
             "iconStyle": {
                 "cursor": "pointer"
             }
         },
-        "description": "\u8fd9\u662f\u4e00\u4e2a\u7b80\u5355\u7684\u793a\u4f8b\uff0c\u4f1a\u7761\u7720 N \u79d2",
-        "container_resources": {
-            "requests": {
-                "cpu": 100,
-                "memory": 128
-            },
-            "limits": {
-                "cpu": 500,
-                "memory": 512
-            }
-        },
+        "description": "\u4e00\u4e2a\u5c06\u9009\u5b9a\u56fe\u50cf\u6ee4\u955c\u5e94\u7528\u4e8e\u56fe\u50cf\u7684\u7a0b\u5e8f\u3002",
         "input_schema": {
-            "description": "Sleep Piece Input Model",
-            "properties": {
-                "sleep_time": {
-                    "default": 1,
-                    "description": "Number of seconds to sleep",
-                    "title": "Sleep Time",
-                    "type": "number"
+            "$defs": {
+                "OutputTypeType": {
+                    "description": "Output type for the result text",
+                    "enum": [
+                        "file",
+                        "base64_string",
+                        "both"
+                    ],
+                    "title": "OutputTypeType",
+                    "type": "string"
                 }
             },
+            "properties": {
+                "input_image": {
+                    "description": "\u8f93\u5165\u56fe\u50cf\u3002\u5b83\u5e94\u8be5\u662f\u6587\u4ef6\u8def\u5f84\uff0c\u6216\u662f base64 \u7f16\u7801\u7684\u5b57\u7b26\u4e32\u3002",
+                    "from_upstream": "always",
+                    "title": "Input Image",
+                    "type": "string"
+                },
+                "sepia": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u68d5\u8910\u8272\u6548\u679c\u3002",
+                    "title": "Sepia",
+                    "type": "boolean"
+                },
+                "black_and_white": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u9ed1\u767d\u6548\u679c\u3002",
+                    "title": "Black And White",
+                    "type": "boolean"
+                },
+                "brightness": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u4eae\u5ea6\u6548\u679c\u3002",
+                    "title": "Brightness",
+                    "type": "boolean"
+                },
+                "darkness": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u9ed1\u6697\u6548\u679c\u3002",
+                    "title": "Darkness",
+                    "type": "boolean"
+                },
+                "contrast": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u5bf9\u6bd4\u6548\u679c\u3002",
+                    "title": "Contrast",
+                    "type": "boolean"
+                },
+                "red": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u7ea2\u8272\u6548\u679c\u3002",
+                    "title": "Red",
+                    "type": "boolean"
+                },
+                "green": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u7eff\u8272\u6548\u679c\u3002",
+                    "title": "Green",
+                    "type": "boolean"
+                },
+                "blue": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u84dd\u8272\u6548\u679c\u3002",
+                    "title": "Blue",
+                    "type": "boolean"
+                },
+                "cool": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u51b7\u8272\u6548\u679c\u3002",
+                    "title": "Cool",
+                    "type": "boolean"
+                },
+                "warm": {
+                    "default": false,
+                    "description": "\u5e94\u7528\u6696\u8272\u6548\u679c\u3002",
+                    "title": "Warm",
+                    "type": "boolean"
+                },
+                "output_type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/OutputTypeType"
+                        }
+                    ],
+                    "default": "both",
+                    "description": "\u8f93\u51fa\u56fe\u50cf\u7684\u683c\u5f0f\u3002\u53ef\u9009\u9879\u4e3a\uff1a`file`\u3001`base64_string`\u3001`both`\u3002"
+                }
+            },
+            "required": [
+                "input_image"
+            ],
             "title": "InputModel",
             "type": "object"
         },
         "output_schema": {
-            "description": "Sleep Piece Output Model",
             "properties": {
-                "message": {
-                    "description": "Sleep piece executed",
-                    "title": "Message",
+                "image_base64_string": {
+                    "default": "",
+                    "description": "\u8f93\u51fa\u56fe\u50cf\u7684 Base64 \u7f16\u7801\u5b57\u7b26\u4e32\u3002",
+                    "title": "Image Base64 String",
+                    "type": "string"
+                },
+                "image_file_path": {
+                    "default": "",
+                    "description": "\u8f93\u51fa\u56fe\u50cf\u6587\u4ef6\u7684\u8def\u5f84\u3002",
+                    "title": "Image File Path",
+                    "type": "string"
+                }
+            },
+            "title": "OutputModel",
+            "type": "object"
+        },
+        "secrets_schema": null,
+        "source_url": "https://github.com/Mockingbird1234/custom_domino_pieces/tree/main/pieces/ImageFilterPiece"
+    },
+    "HttpRequestPiece": {
+        "name": "HttpRequestPiece",
+        "dependency": {
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "default",
+            "http",
+            "request"
+        ],
+        "style": {
+            "node_label": "HTTP Request",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "material-symbols:send",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "\u4ece\u7279\u5b9a\u5730\u5740\u8bf7\u6c42\u6570\u636e\u5e76\u5c06\u6570\u636e\u4e0a\u4f20\u81f3\u5bf9\u8c61\u5b58\u50a8",
+        "input_schema": {
+            "$defs": {
+                "MethodTypes": {
+                    "enum": [
+                        "GET",
+                        "POST",
+                        "PUT",
+                        "DELETE"
+                    ],
+                    "title": "MethodTypes",
+                    "type": "string"
+                }
+            },
+            "properties": {
+                "url": {
+                    "description": "\u6570\u636e\u8bf7\u6c42\u5730\u5740",
+                    "title": "Url",
+                    "type": "string"
+                },
+                "method": {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/MethodTypes"
+                        }
+                    ],
+                    "default": "GET",
+                    "description": "\u8bf7\u6c42\u65b9\u6cd5"
+                },
+                "bearer_token": {
+                    "default": null,
+                    "description": "\u7528\u4e8e\u8ba4\u8bc1\u7684Token",
+                    "title": "Bearer Token",
+                    "type": "string"
+                },
+                "body_json_data": {
+                    "default": "{\n    \"key_1\": \"value_1\",\n    \"key_2\": \"value_2\"\n}\n",
+                    "description": "\u8981\u5728\u8bf7\u6c42\u6b63\u6587\u4e2d\u53d1\u9001\u7684 JSON \u6570\u636e\u3002",
+                    "title": "Body Json Data",
+                    "type": "string",
+                    "widget": "codeeditor-json"
+                }
+            },
+            "required": [
+                "url"
+            ],
+            "title": "InputModel",
+            "type": "object"
+        },
+        "output_schema": {
+            "properties": {
+                "base64_bytes_data": {
+                    "description": "\u5c06\u8f93\u51fa\u6570\u636e\u7f16\u7801\u4e3a Base64 \u5b57\u7b26\u4e32\u3002",
+                    "title": "Base64 Bytes Data",
                     "type": "string"
                 }
             },
             "required": [
-                "message"
+                "base64_bytes_data"
             ],
             "title": "OutputModel",
             "type": "object"
         },
         "secrets_schema": null,
-        "source_url": "https://github.com/Mockingbird1234/custom_domino_pieces/tree/main/pieces/ExampleSleepPiece"
+        "source_url": "https://github.com/Mockingbird1234/custom_domino_pieces/tree/main/pieces/HttpRequestPiece"
     }
 }

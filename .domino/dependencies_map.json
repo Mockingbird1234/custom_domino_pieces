@@ -1,24 +1,14 @@
 {
     "group0": {
         "dependency": {
-            "dockerfile": "Dockerfile_1",
-            "requirements_file": null
-        },
-        "pieces": [
-            "ExampleSineWavePiece"
-        ],
-        "secrets": [],
-        "source_image": "ghcr.io/hpc/hpc:development-group0"
-    },
-    "group1": {
-        "dependency": {
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "pieces": [
-            "ExampleSleepPiece"
+            "ImageFilterPiece",
+            "HttpRequestPiece"
         ],
         "secrets": [],
-        "source_image": "ghcr.io/hpc/hpc:development-group1"
+        "source_image": "ghcr.io/bpptcommon/bpptcommon:development-group0"
     }
 }
