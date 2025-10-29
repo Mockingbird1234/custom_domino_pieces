@@ -1,5 +1,5 @@
 {
-  "name": "图像滤镜",
+  "name": "ImageFilterPiece",
   "description": "一个将选定图像滤镜应用于图像的程序。",
   "dependency": {
     "requirements_file": "requirements_0.txt"

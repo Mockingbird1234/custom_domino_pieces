@@ -1,5 +1,5 @@
 {
-  "name": "数据请求",
+  "name": "HttpRequestPiece",
   "description": "从特定地址请求数据并将数据上传至对象存储",
   "dependency": {
     "requirements_file": "requirements_0.txt"
