@@ -1,0 +1,12 @@
+{
+  "name": "LoginServerPiece",
+  "description": "SSH登录到远程服务器",
+  "dependency": {
+    "requirements_file": "requirements_0.txt"
+  },
+  "tags": ["default", "login", "server"],
+  "style": {
+    "node_label": "Login Server",
+    "icon_class_name": "material-symbols:send"
+  }
+}
